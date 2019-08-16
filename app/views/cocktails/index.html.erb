@@ -1,13 +1,12 @@
-
 <div class="container-fluid">
   <div class="parent">
     <% @cocktails.each do |cocktail| %>
     <div class="card-cocktail">
       <%= cl_image_tag cocktail.photo, height: 300, width: 400, crop: :fill %>
-      <div class="card-cocktail-infos">
+      <div class="card-cocktail-infos" style="linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)")>
         <div>
-         <span> <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
-          <h2><%= link_to "X", cocktail_path(cocktail, method: :delete, data:{confirm:"U sure ?"}) %></h2></span>
+          <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+          <span><%= link_to "delete", cocktail_path(cocktail), method: :delete, data:{confirm:"U sure ?"} %></span>
         </div>
       </div>
     </div>
